@@ -199,18 +199,28 @@ class TextCat {
 			for ( $i=0;$i<$len;$i++ ) {
 				$rlen = $len - $i;
 				if ( $rlen > 4 ) {
-					@$ngram[mb_substr( $word, $i, 5, "UTF-8" )]++;
+                                        if (!isset($ngram[mb_substr( $word, $i, 5, "UTF-8" )]))
+                                            $ngram[mb_substr( $word, $i, 5, "UTF-8" )] = 0;
+					$ngram[mb_substr( $word, $i, 5, "UTF-8" )]++;
 				}
 				if ( $rlen > 3 ) {
-					@$ngram[mb_substr( $word, $i, 4, "UTF-8" )]++;
+                                        if (!isset($ngram[mb_substr( $word, $i, 4, "UTF-8" )]))
+                                            $ngram[mb_substr( $word, $i, 4, "UTF-8" )] = 0;
+					$ngram[mb_substr( $word, $i, 4, "UTF-8" )]++;
 				}
 				if ( $rlen > 2 ) {
-					@$ngram[mb_substr( $word, $i, 3, "UTF-8" )]++;
+                                        if (!isset($ngram[mb_substr( $word, $i, 3, "UTF-8" )]))
+                                            $ngram[mb_substr( $word, $i, 3, "UTF-8" )] = 0;
+					$ngram[mb_substr( $word, $i, 3, "UTF-8" )]++;
 				}
 				if ( $rlen > 1 ) {
-					@$ngram[mb_substr( $word, $i, 2, "UTF-8" )]++;
+                                        if (!isset($ngram[mb_substr( $word, $i, 2, "UTF-8" )]))
+                                            $ngram[mb_substr( $word, $i, 2, "UTF-8" )] = 0;
+					$ngram[mb_substr( $word, $i, 2, "UTF-8" )]++;
 				}
-				@$ngram[mb_substr( $word, $i, 1, "UTF-8" )]++;
+                                if (!isset($ngram[mb_substr( $word, $i, 1, "UTF-8" )]))
+                                    $ngram[mb_substr( $word, $i, 1, "UTF-8" )] = 0;
+				$ngram[mb_substr( $word, $i, 1, "UTF-8" )]++;
 			}
 		}
 		if ( $this->minFreq ) {

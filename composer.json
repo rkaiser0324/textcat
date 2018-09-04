@@ -1,6 +1,6 @@
 {
-    "name": "wikimedia/textcat",
-    "description": "PHP port of the TextCat language guesser utility, see http://odur.let.rug.nl/~vannoord/TextCat/.",
+    "name": "rkaiser0324/textcat",
+    "description": "PHP port of the TextCat language guesser utility, see http://odur.let.rug.nl/~vannoord/TextCat/.  Forked from https://github.com/smalyshev/textcat",
     "authors": [
         {
             "name": "Trey Jones",
